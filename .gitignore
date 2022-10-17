@@ -1,3 +1,4 @@
 *.o
 libmy.a
 .vscode
+check_tests
