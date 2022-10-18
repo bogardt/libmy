@@ -40,7 +40,7 @@ START_TEST(test_my_split_should_success_hardly)
 }
 END_TEST
 
-Suite*  my_split_suite(void) 
+Suite *my_split_suite(void)
 {
     Suite *s = suite_create("my_split");
 

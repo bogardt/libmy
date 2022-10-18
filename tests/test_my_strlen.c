@@ -8,7 +8,7 @@ START_TEST(test_my_strlen_should_success)
 }
 END_TEST
 
-Suite*  my_strlen_suite(void) 
+Suite *my_strlen_suite(void)
 {
     Suite *s = suite_create("my_strlen");
 

@@ -17,7 +17,7 @@ START_TEST(test_my_count_words_should_success)
 }
 END_TEST
 
-Suite*  my_count_words_suite(void) 
+Suite *my_count_words_suite(void)
 {
     Suite *s = suite_create("my_count_words");
 

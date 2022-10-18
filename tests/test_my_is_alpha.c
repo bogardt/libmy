@@ -2,9 +2,9 @@
 
 START_TEST(test_my_is_alpha_should_success)
 {
-    for (char c = 'a'; c <= 'z'; c++) 
+    for (char c = 'a'; c <= 'z'; c++)
         ck_assert_int_eq(my_is_alpha_num(c), 1);
-    for (char c = 'A'; c <= 'Z'; c++) 
+    for (char c = 'A'; c <= 'Z'; c++)
         ck_assert_int_eq(my_is_alpha_num(c), 1);
 }
 END_TEST
@@ -18,7 +18,7 @@ START_TEST(test_my_is_alpha_should_fail)
 }
 END_TEST
 
-Suite*  my_is_alpha_suite(void) 
+Suite *my_is_alpha_suite(void)
 {
     Suite *s = suite_create("my_is_alpha");
 

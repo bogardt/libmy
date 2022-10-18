@@ -1,8 +1,8 @@
 /**
  * Calculate the number of words in a string
- * 
+ *
  * @param str string
- * 
+ *
  * @return The my_count_words() function returns the number of words in a sentence
  *
  * @since 1.0

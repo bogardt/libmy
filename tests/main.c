@@ -1,8 +1,8 @@
 #include "mytest.h"
 
-int     main(void)
+int main(void)
 {
-    SRunner *sr = srunner_create(my_is_digit_suite());    
+    SRunner *sr = srunner_create(my_is_digit_suite());
     srunner_add_suite(sr, my_is_alpha_suite());
     srunner_add_suite(sr, my_putstr_suite());
     srunner_add_suite(sr, my_strlen_suite());

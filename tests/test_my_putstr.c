@@ -10,7 +10,7 @@ START_TEST(test_my_putstr_should_success)
 }
 END_TEST
 
-Suite*  my_putstr_suite(void) 
+Suite *my_putstr_suite(void)
 {
     Suite *s = suite_create("my_putstr");
 

@@ -16,7 +16,7 @@ START_TEST(test_my_tolower_should_fail)
 }
 END_TEST
 
-Suite*  my_tolower_suite(void) 
+Suite *my_tolower_suite(void)
 {
     Suite *s = suite_create("my_tolower");
 
