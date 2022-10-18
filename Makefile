@@ -16,6 +16,7 @@ SRC			+= $(REP)/my_strcat.c
 SRC_TEST	+= $(TEST_REP)/main.c
 SRC_TEST	+= $(TEST_REP)/test_my_is_alpha.c
 SRC_TEST	+= $(TEST_REP)/test_my_is_digit.c
+SRC_TEST	+= $(TEST_REP)/test_my_is_alpha_num.c
 SRC_TEST	+= $(TEST_REP)/test_my_strlen.c
 SRC_TEST	+= $(TEST_REP)/test_my_putstr.c
 SRC_TEST	+= $(TEST_REP)/test_my_count_words.c

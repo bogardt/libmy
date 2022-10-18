@@ -2,10 +2,8 @@
 
 START_TEST(test_my_is_digit_should_success)
 {
-    /* check the all alphabet */
     for (char c = '0'; c <= '9'; c++) 
         ck_assert_int_eq(my_is_digit(c), 1);
-
 }
 END_TEST
 
