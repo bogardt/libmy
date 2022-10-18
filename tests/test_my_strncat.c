@@ -1,6 +1,5 @@
 #include "mytest.h"
 #include <string.h>
-#include <stdio.h>
 
 START_TEST(test_my_strncat_should_success_level_1)
 {

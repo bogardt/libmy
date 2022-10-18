@@ -1,5 +1,4 @@
 #include "mytest.h"
-#include <stdio.h>
 
 START_TEST(test_my_split_should_success_easily)
 {

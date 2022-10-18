@@ -1,5 +1,7 @@
 /**
- * Calculate the length of a string - The my_strlen() function calculates the length of the string pointed to by str, excluding the terminating null byte ('\0').
+ * Calculate the length of a string
+    The my_strlen() function calculates the length of the string pointed to by str,
+    excluding the terminating null byte ('\0').
  *
  * @param str string
  *

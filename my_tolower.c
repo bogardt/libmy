@@ -3,7 +3,8 @@
  *
  * @param c integer
  *
- * @return The value returned is that of the converted letter, or c if the conversion was not possible.
+ * @return The value returned is that of the converted letter,
+    or c if the conversion was not possible.
  *
  * @since 1.0
  *

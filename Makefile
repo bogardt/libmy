@@ -14,6 +14,7 @@ SRC			+= $(REP)/my_strcat.c
 SRC			+= $(REP)/my_tolower.c
 SRC			+= $(REP)/my_toupper.c
 SRC			+= $(REP)/my_strcmp.c
+SRC			+= $(REP)/my_strncmp.c
 
 # sources des tests unitaires
 SRC_TEST	+= $(TEST_REP)/main.c
@@ -29,6 +30,7 @@ SRC_TEST	+= $(TEST_REP)/test_my_strncat.c
 SRC_TEST	+= $(TEST_REP)/test_my_tolower.c
 SRC_TEST	+= $(TEST_REP)/test_my_toupper.c
 SRC_TEST	+= $(TEST_REP)/test_my_strcmp.c
+SRC_TEST	+= $(TEST_REP)/test_my_strncmp.c
 
 RM			= rm -f
 
