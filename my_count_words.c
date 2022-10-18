@@ -1,4 +1,13 @@
-int     my_count_words(const char *str, char sep)
+/**
+ * Calculate the number of words in a string
+ * 
+ * @param str string
+ * 
+ * @return The my_count_words() function returns the number of words in a sentence
+ *
+ * @since 1.0
+ */
+int my_count_words(const char *str, char sep)
 {
     int i = 0;
     int words = 0;

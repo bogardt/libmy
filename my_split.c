@@ -14,6 +14,16 @@ static int current_word_size(const char *str, int from, char sep)
     return start;
 }
 
+/**
+ * Split a function into multiple strings by separator
+ *
+ * @param str string to be splitted
+ * @param sep char separator
+ *
+ * @return char** multidimentional strings, as a matrix (2, 2)
+ *
+ * @since 1.0
+ */
 char **my_split(const char *str, char sep)
 {
     int i = 0;

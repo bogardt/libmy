@@ -5,19 +5,23 @@ TEST_REP	= ./tests
 SRC			+= $(REP)/my_is_alpha.c
 SRC			+= $(REP)/my_is_digit.c
 SRC			+= $(REP)/my_is_alpha_num.c
+SRC			+= $(REP)/my_strlen.c
 SRC			+= $(REP)/my_putstr.c
 SRC			+= $(REP)/my_count_words.c
 SRC			+= $(REP)/my_split.c
-SRC			+= $(REP)/my_strlen.c
+SRC			+= $(REP)/my_strncat.c
+SRC			+= $(REP)/my_strcat.c
 
 # sources des tests unitaires
 SRC_TEST	+= $(TEST_REP)/main.c
 SRC_TEST	+= $(TEST_REP)/test_my_is_alpha.c
 SRC_TEST	+= $(TEST_REP)/test_my_is_digit.c
-SRC_TEST	+= $(TEST_REP)/test_my_putstr.c
 SRC_TEST	+= $(TEST_REP)/test_my_strlen.c
+SRC_TEST	+= $(TEST_REP)/test_my_putstr.c
 SRC_TEST	+= $(TEST_REP)/test_my_count_words.c
 SRC_TEST	+= $(TEST_REP)/test_my_split.c
+SRC_TEST	+= $(TEST_REP)/test_my_strcat.c
+SRC_TEST	+= $(TEST_REP)/test_my_strncat.c
 
 RM			= rm -f
 
