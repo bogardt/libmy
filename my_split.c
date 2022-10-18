@@ -1,60 +1,41 @@
-#include <stdlib.h>
 #include "libmy.h"
+#include <stdlib.h>
 
-static int      is_sep(char current, char sep)
+static int current_word_size(const char *str, int from, char sep)
 {
-    return current == sep;
-}
+    int start = 0;
 
-static int      get_next_size(const char *str, int from, char sep)
-{
-    int to = 0;
-
-    while (str[from] && !is_sep(str[from], sep))
+    while (str[from] && str[from] != sep)
     {
         from++;
-        to++;
+        start++;
     }
 
-    return to;
+    return start;
 }
 
-static int      count_words(const char *str, char sep)
-{
-    int i = 0;
-    int words = 0;
-
-    while (str[i++])
-    {
-        if (i == 0 && (my_is_alpha(str[i]) || my_is_digit(str[i])))
-            words++;
-        if (is_sep(str[i], sep) && str[i + 1] && (my_is_alpha(str[i]) || my_is_digit(str[i])))
-            words++;
-    }
-
-    return words;
-}
-
-char**          my_split(const char *str, char sep)
+char **my_split(const char *str, char sep)
 {
     int i = 0;
     int j = 0;
-    char **ret = malloc(sizeof(char *) * count_words(str, sep));
+    int count_total_words = my_count_words(str, sep);
+    char **ret = (char **)malloc(sizeof(char *) * count_total_words);
 
-    while (i++ < my_strlen(str))
+    while (str[i])
     {
         if (str[i] != sep)
         {
-            int malloc_size_line = get_next_size(str, i, sep);
-            ret[j] = malloc(sizeof(char) * malloc_size_line);
+            int word_size = current_word_size(str, i, sep);
+            ret[j] = (char *)malloc(sizeof(char) * word_size + 1);
+
             int k = 0;
-            while (str[i] && !is_sep(str[i], sep))
+            while (str[i] && str[i] != sep)
                 ret[j][k++] = str[i++];
-            ret[j++][k] = 0;
+            ret[j][k] = 0;
             j++;
         }
+        else
+            i++;
     }
-    ret[i] = 0;
-
     return ret;
 }

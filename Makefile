@@ -1,15 +1,23 @@
 REP			= .
 TEST_REP	= ./tests
 
+# sources de la librarie
 SRC			+= $(REP)/my_is_alpha.c
 SRC			+= $(REP)/my_is_digit.c
+SRC			+= $(REP)/my_is_alpha_num.c
 SRC			+= $(REP)/my_putstr.c
+SRC			+= $(REP)/my_count_words.c
 SRC			+= $(REP)/my_split.c
 SRC			+= $(REP)/my_strlen.c
 
+# sources des tests unitaires
 SRC_TEST	+= $(TEST_REP)/main.c
 SRC_TEST	+= $(TEST_REP)/test_my_is_alpha.c
 SRC_TEST	+= $(TEST_REP)/test_my_is_digit.c
+SRC_TEST	+= $(TEST_REP)/test_my_putstr.c
+SRC_TEST	+= $(TEST_REP)/test_my_strlen.c
+SRC_TEST	+= $(TEST_REP)/test_my_count_words.c
+SRC_TEST	+= $(TEST_REP)/test_my_split.c
 
 RM			= rm -f
 
@@ -19,14 +27,23 @@ OBJS		= $(SRC:.c=.o)
 
 OBJS_TEST	= $(SRC_TEST:.c=.o)
 
+# flags de warning
 CFLAGS		+= -Wall -Wextra -Werror
 CFLAGS		+= -ansi -pedantic
+
+# options pour gdb / valgrind
 CFLAGS		+= -O0 -g3
-CFLAGS		+= -I./includes
+
+# force gcc a compiler en gnu99
 CFLAGS		+= -std=gnu99
 
+# association du path des fichiers header 
+CFLAGS		+= -I./includes
+
+# flag pour associer la librarie static libmy.a aux projets de tests
 LDFLAGS		+= -L. -lmy
 
+# flags pour compiler avec check.h
 TEST_FLAGS	+= -lcheck -lm -lpthread -lrt -lsubunit
 
 NAME		= libmy.a

@@ -2,11 +2,16 @@
 
 int     main(void)
 {
-    SRunner *sr = srunner_create(my_is_digit_suite());
-    
+    SRunner *sr = srunner_create(my_is_digit_suite());    
     srunner_add_suite(sr, my_is_alpha_suite());
-    
-    srunner_run_all(sr, CK_NORMAL);
+    srunner_add_suite(sr, my_putstr_suite());
+    srunner_add_suite(sr, my_strlen_suite());
+    srunner_add_suite(sr, my_count_words_suite());
+    srunner_add_suite(sr, my_split_suite());
+
+    // run & print output with higher level of verbosity
+    srunner_run_all(sr, CK_VERBOSE);
+
     int number_failed = srunner_ntests_failed(sr);
     srunner_free(sr);
 
