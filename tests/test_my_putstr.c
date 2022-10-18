@@ -3,7 +3,7 @@
 START_TEST(test_my_putstr_should_success)
 {
     char *test = "test";
-    my_putstr(test);
+    // my_putstr(test);
 
     /* value shouldn't be changed */
     ck_assert_str_eq("test", test);
