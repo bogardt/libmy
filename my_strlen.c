@@ -1,3 +1,5 @@
+#include "libmy.h"
+
 /**
  * Calculate the length of a string
     The my_strlen() function calculates the length of the string pointed to by str,
@@ -10,7 +12,7 @@
  *
  * @since 1.0
  */
-int my_strlen(const char *str)
+size_t my_strlen(const char *str)
 {
     int i = 0;
 
