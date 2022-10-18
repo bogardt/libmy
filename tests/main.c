@@ -8,6 +8,10 @@ int     main(void)
     srunner_add_suite(sr, my_strlen_suite());
     srunner_add_suite(sr, my_count_words_suite());
     srunner_add_suite(sr, my_split_suite());
+    srunner_add_suite(sr, my_strcat_suite());
+    srunner_add_suite(sr, my_strncat_suite());
+    srunner_add_suite(sr, my_tolower_suite());
+    srunner_add_suite(sr, my_toupper_suite());
 
     // run & print output with higher level of verbosity
     srunner_run_all(sr, CK_VERBOSE);

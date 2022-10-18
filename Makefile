@@ -11,6 +11,8 @@ SRC			+= $(REP)/my_count_words.c
 SRC			+= $(REP)/my_split.c
 SRC			+= $(REP)/my_strncat.c
 SRC			+= $(REP)/my_strcat.c
+SRC			+= $(REP)/my_tolower.c
+SRC			+= $(REP)/my_toupper.c
 
 # sources des tests unitaires
 SRC_TEST	+= $(TEST_REP)/main.c
@@ -23,6 +25,8 @@ SRC_TEST	+= $(TEST_REP)/test_my_count_words.c
 SRC_TEST	+= $(TEST_REP)/test_my_split.c
 SRC_TEST	+= $(TEST_REP)/test_my_strcat.c
 SRC_TEST	+= $(TEST_REP)/test_my_strncat.c
+SRC_TEST	+= $(TEST_REP)/test_my_tolower.c
+SRC_TEST	+= $(TEST_REP)/test_my_toupper.c
 
 RM			= rm -f
 
