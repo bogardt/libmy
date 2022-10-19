@@ -15,6 +15,10 @@ SRC			+= $(REP)/my_tolower.c
 SRC			+= $(REP)/my_toupper.c
 SRC			+= $(REP)/my_strcmp.c
 SRC			+= $(REP)/my_strncmp.c
+SRC			+= $(REP)/my_strcpy.c
+SRC			+= $(REP)/my_strncpy.c
+SRC			+= $(REP)/my_strlcat.c
+SRC			+= $(REP)/my_strlcpy.c
 
 # sources des tests unitaires
 SRC_TEST	+= $(TEST_REP)/main.c
@@ -31,6 +35,10 @@ SRC_TEST	+= $(TEST_REP)/test_my_tolower.c
 SRC_TEST	+= $(TEST_REP)/test_my_toupper.c
 SRC_TEST	+= $(TEST_REP)/test_my_strcmp.c
 SRC_TEST	+= $(TEST_REP)/test_my_strncmp.c
+SRC_TEST	+= $(TEST_REP)/test_my_strcpy.c
+# SRC_TEST	+= $(TEST_REP)/test_my_strncpy.c
+# SRC_TEST	+= $(TEST_REP)/test_my_strlcat.c
+# SRC_TEST	+= $(TEST_REP)/test_my_strlcpy.c
 
 RM			= rm -f
 

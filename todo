@@ -4,3 +4,10 @@ valgrind ./a.out
 
 #principal cmd:
 make re; make clean; make re_test; make clean_test; ./check_tests
+
+
+faire des :
+
+valgrind ./check_tests
+
+pour trouver les memory leaks

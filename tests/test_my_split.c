@@ -10,6 +10,10 @@ START_TEST(test_my_split_should_success_easily)
 
     for (size_t i = 0; i < 3; i++)
         ck_assert_str_eq(comp[i], tab[i]);
+
+    for (size_t i = 0; i < 3; i++)
+        free(tab[i]);
+    free(tab);
 }
 END_TEST
 
@@ -23,6 +27,10 @@ START_TEST(test_my_split_should_success_mediumly)
 
     for (size_t i = 0; i < 3; i++)
         ck_assert_str_eq(comp[i], tab[i]);
+
+    for (size_t i = 0; i < 3; i++)
+        free(tab[i]);
+    free(tab);
 }
 END_TEST
 
@@ -36,6 +44,10 @@ START_TEST(test_my_split_should_success_hardly)
 
     for (size_t i = 0; i < 6; i++)
         ck_assert_str_eq(comp[i], tab[i]);
+
+    for (size_t i = 0; i < 6; i++)
+        free(tab[i]);
+    free(tab);
 }
 END_TEST
 

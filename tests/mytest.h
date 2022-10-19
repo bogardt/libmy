@@ -17,5 +17,6 @@ Suite *my_tolower_suite(void);
 Suite *my_toupper_suite(void);
 Suite *my_strcmp_suite(void);
 Suite *my_strncmp_suite(void);
+Suite *my_strcpy_suite(void);
 
 #endif /* !__MY_TEST_H__ */

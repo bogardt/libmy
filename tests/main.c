@@ -14,6 +14,7 @@ int main(void)
     srunner_add_suite(sr, my_toupper_suite());
     srunner_add_suite(sr, my_strcmp_suite());
     srunner_add_suite(sr, my_strncmp_suite());
+    srunner_add_suite(sr, my_strcpy_suite());
 
     // run & print output with higher level of verbosity
     srunner_run_all(sr, CK_VERBOSE);

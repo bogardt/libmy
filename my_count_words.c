@@ -1,3 +1,5 @@
+#include "libmy.h"
+
 /**
  * Calculate the number of words in a string
  *
@@ -7,11 +9,11 @@
  *
  * @since 1.0
  */
-int my_count_words(const char *str, char sep)
+size_t my_count_words(const char *str, char sep)
 {
-    int i = 0;
-    int words = 0;
-    int last_word = 0;
+    size_t words = 0;
+    size_t i = 0;
+    char last_word = 0;
 
     while (str[i])
     {
