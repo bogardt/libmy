@@ -5,3 +5,4 @@ check_tests
 a.out
 *.c.gcov
 *.gcno
+*.gcda
