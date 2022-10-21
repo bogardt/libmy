@@ -39,7 +39,8 @@ FILE_SRC	= \
 	my_strncat\
 	my_strlcat\
 	my_memcpy \
-	my_memset
+	my_memset \
+	my_strnlen
 
 SRC = $(addprefix $(REP)/,$(addsuffix .c,$(FILE_SRC)))
 SRC_COV = \
@@ -49,7 +50,6 @@ SRC_COV = \
 RES_COV = \
 	$(addprefix $(REP)/,$(addsuffix .c.gcov,$(FILE_SRC)))
 
-# sources des tests unitaires
 FILE_TEST = \
 	main \
   test_my_is_alpha \
@@ -70,10 +70,10 @@ FILE_TEST = \
   test_my_strlcat \
   test_my_strlcpy \
   test_my_memcpy \
-  test_my_memset
+  test_my_memset \
+	test_my_strnlen
 
 SRC_TEST = $(addprefix $(TEST_REP)/,$(addsuffix .c,$(FILE_TEST)))
-
 
 RM			= rm -f
 
