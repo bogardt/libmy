@@ -40,6 +40,7 @@ FILE_SRC	= \
 	my_strlcat\
 	my_memcpy \
 	my_memset \
+	my_bzero \
 	my_strnlen
 
 SRC = $(addprefix $(REP)/,$(addsuffix .c,$(FILE_SRC)))
@@ -71,7 +72,8 @@ FILE_TEST = \
   test_my_strlcpy \
   test_my_memcpy \
   test_my_memset \
-	test_my_strnlen
+	test_my_strnlen \
+	test_my_bzero
 
 SRC_TEST = $(addprefix $(TEST_REP)/,$(addsuffix .c,$(FILE_TEST)))
 
@@ -132,10 +134,10 @@ re:	fclean all
 
 test:	$(TEST_NAME)
 
-%.c.gcov: $(TEST_NAME)
-	./%<
+# %.c.gcov: $(TEST_NAME)
 
-cover: $(TEST_NAME)	 ## Generate cover, Please compile w/ gcc
+cover: $(TEST_NAME) ## Generate cover, Please compile w/ gcc
+	./$<
 	gcov *.c
 
 clean\:test:

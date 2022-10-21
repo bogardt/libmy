@@ -6,6 +6,7 @@
 void my_putstr(const char *str);
 void *my_memcpy(void *dest, const void *src, unsigned int n);
 void *my_memset(void *s, int c, unsigned int n);
+void my_bzero(void *s, unsigned int n);
 
 int my_is_alpha(char c);
 int my_is_digit(char c);

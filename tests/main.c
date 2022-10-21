@@ -29,6 +29,7 @@ SRunner *run_all(void) {
 
     srunner_add_suite(sr, my_memcpy_suite());
     srunner_add_suite(sr, my_memset_suite());
+    srunner_add_suite(sr, my_bzero_suite());
 
     return sr;
 }
