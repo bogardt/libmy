@@ -31,14 +31,7 @@
  *
 */
 unsigned int my_strlcat(char *dest, const char *src, unsigned int size) {
-    // https://c-for-dummies.com/blog/?p=3896
-    //  if (dest == NULL || src == NULL)
-    //     return 0;
+    my_strncat(dest, src, size);
 
-    unsigned int src_len = my_strlen(src);
-    unsigned int dest_len = my_strlen(dest);
-
-    my_strncat(dest, src, dest_len - src_len - size);
-
-    return src_len + dest_len;
+    return my_strlen(src) + my_strlen(dest);
 }
