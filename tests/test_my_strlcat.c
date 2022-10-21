@@ -1,78 +1,40 @@
+#include "bsd/string.h"
 #include "mytest.h"
-#include <bsd/string.h>
-#include <stdio.h>
-#include <string.h>
 
-START_TEST(test_my_strlcat_should_success_level_1) {
-    // char *src = "toto";
+#define FULL_PATH_MAX_LEN 15
+#define FULL_PATH_RES     "hello world"
 
-    // char s1[7] = "tata";
-    // int res = my_strlcat(s1, src, 5);
+/* START_TEST(test_my_strlcat_should_copy) { */
+/*     char full_path[FULL_PATH_MAX_LEN] = "hello"; */
 
-    // todo: chantier
-    // char s2[4] = "tata";
-    // int res_strlcat = strlcat(s2, src, 2);
+/*     ck_assert_int_eq(my_strlcpy(full_path, " wolrd", FULL_PATH_MAX_LEN), */
+/*                      strlen(FULL_PATH_RES)); */
+/*     ck_assert_str_eq(full_path, FULL_PATH_RES); */
+/* } */
+/* END_TEST */
 
-    // printf("res: [%d] & s2: [%s]\n", res_strlcat, s2);
+START_TEST(test_my_strlcat_should_trunkat) {
+    char full_path[FULL_PATH_MAX_LEN], BSD_full_path[FULL_PATH_MAX_LEN];
+    char *src = "hello world long string";
 
-    // ck_assert_int_eq(res, res_strlcat);
-    // ck_assert_str_eq(s1, s2);
+    unsigned int ret = my_strlcpy(full_path, src, FULL_PATH_MAX_LEN);
+    unsigned int BSD_ret = strlcpy(BSD_full_path, src, FULL_PATH_MAX_LEN);
+
+    ck_assert_int_eq(ret, BSD_ret);
+    ck_assert_str_eq(full_path, BSD_full_path);
+
+    ck_assert_int_eq(ret, strlen(src));
+    ck_assert_str_eq(full_path, FULL_PATH_RES " lo");
 }
 END_TEST
-
-START_TEST(test_my_strlcat_should_success_level_2) {
-    // char *src = "toto123";
-
-    // char s1[7] = "tata";
-    // int res = my_strlcat(s1, src, 5);
-
-    // char s2[7] = "tata";
-    // int res_strlcat = strlcat(s2, src, 5);
-
-    // ck_assert_int_eq(res, res_strlcat);
-    // ck_assert_str_eq(s1, s2);
-}
-END_TEST
-
-START_TEST(test_my_strlcat_should_success_level_3) {
-    // char *src = NULL;
-
-    // char s1[7] = "tata";
-    // int res = my_strlcat(s1, src, 5);
-    // (void) res;
-    // char s2[7] = "tata";
-    // int res_strlcat = strlcat(s2, src, 5);
-    // (void)res_strlcat;
-    // ck_assert_int_eq(res, res_strlcat);
-}
-END_TEST
-
-// START_TEST(test_my_strlcat_should_success_level_4)
-// {
-//     char s1[8] = "tata";
-//     char *s2 = "toto";
-//     int length = strlen(s1) + strlen(s2);
-//     char *cpy = (char *)malloc(sizeof(char) * length + 1);
-
-//     my_strcpy(cpy, s1);
-
-//     char *res = my_strlcat(cpy, s2, 8);
-
-//     ck_assert_str_eq(res, "tatatoto");
-
-//     free(res);
-// }
-// END_TEST
 
 Suite *my_strlcat_suite(void) {
     Suite *s = suite_create("my_strlcat");
 
     /* Core test case */
     TCase *tc_core = tcase_create("Core");
-    tcase_add_test(tc_core, test_my_strlcat_should_success_level_1);
-    tcase_add_test(tc_core, test_my_strlcat_should_success_level_2);
-    tcase_add_test(tc_core, test_my_strlcat_should_success_level_3);
-    // tcase_add_test(tc_core, test_my_strlcat_should_success_level_4);
+    // tcase_add_test(tc_core, test_my_strlcat_should_copy);
+    tcase_add_test(tc_core, test_my_strlcat_should_trunkat);
     suite_add_tcase(s, tc_core);
 
     return s;

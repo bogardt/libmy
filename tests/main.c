@@ -33,7 +33,7 @@ SRunner *run_all(void) {
 
 int main(void) {
     SRunner *sr = run_all();
-    // SRunner *sr = only_one_test();
+    //  SRunner *sr = only_one_test();
 
     // run & print output with higher level of verbosity
     srunner_run_all(sr, CK_VERBOSE);

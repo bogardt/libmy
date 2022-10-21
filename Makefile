@@ -55,7 +55,7 @@ CFLAGS		+= -Wall -Wextra -Werror -Wno-newline-eof
 CFLAGS		+= -ansi -pedantic
 
 # options pour gdb / valgrind
-CFLAGS		+= -O0 -g3
+CFLAGS		+= -O0 -gdwarf-4
 
 # force gcc a compiler en gnu99
 CFLAGS		+= -std=gnu99
@@ -63,14 +63,14 @@ CFLAGS		+= -std=gnu99
 # association du path des fichiers header 
 CFLAGS		+= -I./includes
 
+# flags pour compiler la library bsd
+BSD_FLAGS	+= -lbsd
+
 # flag pour associer la librarie static libmy.a aux projets de tests
 LDFLAGS		+= -L. -lmy
 
 # flags pour compiler avec check.h
 TEST_FLAGS	+= -lcheck -lm -lpthread -lrt -lsubunit
-
-# flags pour compiler la library bsd
-BSD_FLAGS	+= -lbsd
 
 NAME		= libmy.a
 
@@ -83,7 +83,8 @@ $(NAME):	$(OBJS)
 			ranlib $(NAME)
 
 $(TEST_NAME):	$(OBJS_TEST)
-				$(CC) -o $(TEST_NAME) $(OBJS_TEST) $(CFLAGS) $(LDFLAGS) $(TEST_FLAGS) $(BSD_FLAGS)
+	$(CC) -o $(TEST_NAME) $(OBJS_TEST) $(CFLAGS) $(LDFLAGS) \
+		$(TEST_FLAGS) $(BSD_FLAGS)
 
 clean:
 			$(RM) $(OBJS)

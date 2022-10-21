@@ -2,13 +2,12 @@
 
 START_TEST(test_my_strcat_should_success_level_1) {
     const char *src = "toto";
+    char dest1[9] = "tata";
+    char dest2[9] = "tata";
 
-    char dest[9] = "tata";
-    char *res = my_strcat(dest, src);
-
-    (void)res;
-
-    ck_assert_str_eq(dest, "tatatoto");
+    ck_assert_str_eq(my_strcat(dest1, src), strcat(dest2, src));
+    ck_assert_str_eq(dest1, dest2);
+    ck_assert_str_eq(dest1, "tatatoto");
 }
 END_TEST
 
@@ -17,7 +16,7 @@ START_TEST(test_my_strcat_should_success_level_2) {
 
     char dest[12] = "tata";
     char *res = my_strcat(dest, src);
-    (void)res;
+    (void) res;
 
     ck_assert_str_eq(dest, "tatatoto123");
 }
@@ -28,7 +27,7 @@ START_TEST(test_my_strcat_should_success_level_3) {
 
     char dest[28] = "toto teuf";
     char *res = my_strcat(dest, src);
-    (void)res;
+    (void) res;
 
     ck_assert_str_eq(dest, "toto teuf encore un weekend");
 }
