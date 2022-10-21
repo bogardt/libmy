@@ -8,7 +8,4 @@
  * @since 1.0
  *
  */
-int my_is_digit(char c)
-{
-    return (c >= '0' && c <= '9');
-}
+int my_is_digit(char c) { return (c >= '0' && c <= '9'); }

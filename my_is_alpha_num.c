@@ -1,7 +1,8 @@
 #include "libmy.h"
 
 /**
- * Check if current char is alpha >= 'a' & <= 'z' or >= 'A' & <= 'Z' OR numeric >= '0' & <= '9'
+ * Check if current char is alpha >= 'a' & <= 'z' or >= 'A' & <= 'Z' OR numeric
+ * >= '0' & <= '9'
  *
  * @param C char
  *
@@ -10,7 +11,4 @@
  * @since 1.0
  *
  */
-int my_is_alpha_num(char c)
-{
-    return my_is_alpha(c) || my_is_digit(c);
-}
+int my_is_alpha_num(char c) { return my_is_alpha(c) || my_is_digit(c); }

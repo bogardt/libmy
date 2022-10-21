@@ -27,15 +27,14 @@
     thereof) is found, respectively, to be less than, to match, or be
     greater than s2.
 */
-int my_strncmp(const char *s1, const char *s2, unsigned int n)
-{
-    if (s1 == NULL || s2 == NULL)
-        return 0;
+int my_strncmp(const char *s1, const char *s2, unsigned int n) {
+  if (s1 == NULL || s2 == NULL)
+    return 0;
 
-    unsigned int i;
-    for (i = 0; i < n && s1[i] && s2[i]; i++)
-        if (s1[i] != s2[i])
-            return s1[i] - s2[i];
+  unsigned int i;
+  for (i = 0; i < n && s1[i] && s2[i]; i++)
+    if (s1[i] != s2[i])
+      return s1[i] - s2[i];
 
-    return -1 ? i < n : 0;
+  return -1 ? i < n : 0;
 }

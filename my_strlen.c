@@ -2,8 +2,8 @@
 
 /**
  * Calculate the length of a string
-    The my_strlen() function calculates the length of the string pointed to by str,
-    excluding the terminating null byte ('\0').
+    The my_strlen() function calculates the length of the string pointed to by
+ str, excluding the terminating null byte ('\0').
  *
  * @param str string
  *
@@ -12,11 +12,10 @@
  *
  * @since 1.0
  */
-unsigned int my_strlen(const char *str)
-{
-    unsigned int i = 0;
+unsigned int my_strlen(const char *str) {
+  unsigned int i = 0;
 
-    while (str[i])
-        i++;
-    return i;
+  while (str[i])
+    i++;
+  return i;
 }
