@@ -1,4 +1,4 @@
-REP			= .
+REP			= ./src
 TEST_REP	= ./tests
 
 # sources de la librarie
@@ -138,7 +138,7 @@ test:	$(TEST_NAME)
 
 cover: $(TEST_NAME) ## Generate cover, Please compile w/ gcc
 	./$<
-	gcov *.c
+	gcov $(REP)/*.c
 
 clean\:test:
 	$(RM) $(OBJS_TEST) ./$(TEST_REP)/*.gcno ./$(TEST_REP)/*.gcda ./$(TEST_REP)/*.c.gcov
