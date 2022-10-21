@@ -22,13 +22,13 @@
 */
 
 char *my_strncpy(char *dest, const char *src, unsigned int n) {
-  unsigned int i;
+    unsigned int i;
 
-  for (i = 0; src[i] && i < n; i++)
-    dest[i] = src[i];
+    for (i = 0; src[i] && i < n; i++)
+        dest[i] = src[i];
 
-  for (; i < n; i++)
-    dest[i] = 0;
+    for (; i < n; i++)
+        dest[i] = 0;
 
-  return dest;
+    return dest;
 }

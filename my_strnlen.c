@@ -16,9 +16,9 @@
  * @since 1.0
  */
 unsigned int my_strnlen(const char *str, unsigned int maxlen) {
-  unsigned int i = 0;
+    unsigned int i = 0;
 
-  while (str[i] && i < maxlen)
-    i++;
-  return i;
+    while (str[i] && i < maxlen)
+        i++;
+    return i;
 }

@@ -24,12 +24,12 @@
  * @since 1.0
  */
 char *my_strncat(char *dest, const char *src, unsigned int n) {
-  unsigned int len = my_strlen(dest);
-  unsigned int i;
+    unsigned int len = my_strlen(dest);
+    unsigned int i;
 
-  for (i = 0; i < n && src[i]; i++)
-    dest[len + i] = src[i];
-  dest[len + i] = 0;
+    for (i = 0; i < n && src[i]; i++)
+        dest[len + i] = src[i];
+    dest[len + i] = 0;
 
-  return dest;
+    return dest;
 }

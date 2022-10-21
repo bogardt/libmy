@@ -31,12 +31,12 @@
  *
 */
 unsigned int my_strlcpy(char *dest, const char *src, unsigned int size) {
-  if (src == NULL)
-    return 0;
+    if (src == NULL)
+        return 0;
 
-  unsigned int len = my_strlen(src);
+    unsigned int len = my_strlen(src);
 
-  my_strncpy(dest, src, size);
+    my_strncpy(dest, src, size);
 
-  return len;
+    return len;
 }
