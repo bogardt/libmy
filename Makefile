@@ -44,14 +44,14 @@ SRC_TEST	+= $(TEST_REP)/test_my_memcpy.c
 
 RM			= rm -f
 
-CC			= gcc
+CC			?= gcc
 
 OBJS		= $(SRC:.c=.o)
 
 OBJS_TEST	= $(SRC_TEST:.c=.o)
 
 # flags de warning
-CFLAGS		+= -Wall -Wextra -Werror
+CFLAGS		+= -Wall -Wextra -Werror -Wno-newline-eof
 CFLAGS		+= -ansi -pedantic
 
 # options pour gdb / valgrind
@@ -98,10 +98,10 @@ test:		$(TEST_NAME)
 clean_test:
 			$(RM) $(OBJS_TEST)
 
-fclean_test: clean_test
+fclean\:test: clean_test
 			$(RM) $(TEST_NAME)
 
-re_test:	fclean_test $(TEST_NAME)
+test\:re:	fclean\:test $(TEST_NAME)
 
 
 .PHONY:		all clean fclean re
