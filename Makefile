@@ -9,16 +9,17 @@ SRC			+= $(REP)/my_strlen.c
 SRC			+= $(REP)/my_putstr.c
 SRC			+= $(REP)/my_count_words.c
 SRC			+= $(REP)/my_split.c
-SRC			+= $(REP)/my_strncat.c
-SRC			+= $(REP)/my_strcat.c
 SRC			+= $(REP)/my_tolower.c
 SRC			+= $(REP)/my_toupper.c
 SRC			+= $(REP)/my_strcmp.c
 SRC			+= $(REP)/my_strncmp.c
 SRC			+= $(REP)/my_strcpy.c
 SRC			+= $(REP)/my_strncpy.c
-SRC			+= $(REP)/my_strlcat.c
 SRC			+= $(REP)/my_strlcpy.c
+SRC			+= $(REP)/my_strcat.c
+SRC			+= $(REP)/my_strncat.c
+SRC			+= $(REP)/my_strlcat.c
+SRC			+= $(REP)/my_memcpy.c
 
 # sources des tests unitaires
 SRC_TEST	+= $(TEST_REP)/main.c
@@ -36,9 +37,10 @@ SRC_TEST	+= $(TEST_REP)/test_my_toupper.c
 SRC_TEST	+= $(TEST_REP)/test_my_strcmp.c
 SRC_TEST	+= $(TEST_REP)/test_my_strncmp.c
 SRC_TEST	+= $(TEST_REP)/test_my_strcpy.c
-# SRC_TEST	+= $(TEST_REP)/test_my_strncpy.c
-# SRC_TEST	+= $(TEST_REP)/test_my_strlcat.c
-# SRC_TEST	+= $(TEST_REP)/test_my_strlcpy.c
+SRC_TEST	+= $(TEST_REP)/test_my_strncpy.c
+SRC_TEST	+= $(TEST_REP)/test_my_strlcat.c
+SRC_TEST	+= $(TEST_REP)/test_my_strlcpy.c
+SRC_TEST	+= $(TEST_REP)/test_my_memcpy.c
 
 RM			= rm -f
 
@@ -67,6 +69,9 @@ LDFLAGS		+= -L. -lmy
 # flags pour compiler avec check.h
 TEST_FLAGS	+= -lcheck -lm -lpthread -lrt -lsubunit
 
+# flags pour compiler la library bsd
+BSD_FLAGS	+= -lbsd
+
 NAME		= libmy.a
 
 TEST_NAME	= check_tests
@@ -78,7 +83,7 @@ $(NAME):	$(OBJS)
 			ranlib $(NAME)
 
 $(TEST_NAME):	$(OBJS_TEST)
-				$(CC) -o $(TEST_NAME) $(OBJS_TEST) $(CFLAGS) $(LDFLAGS) $(TEST_FLAGS)
+				$(CC) -o $(TEST_NAME) $(OBJS_TEST) $(CFLAGS) $(LDFLAGS) $(TEST_FLAGS) $(BSD_FLAGS)
 
 clean:
 			$(RM) $(OBJS)

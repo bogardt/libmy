@@ -20,6 +20,7 @@
  *
  * @since 1.0
  */
+#include <stdio.h>
 char *my_strcat(char *dest, const char *src)
 {
     size_t len = my_strlen(dest);

@@ -4,6 +4,7 @@
 #include <unistd.h>
 
 void my_putstr(const char *str);
+void *my_memcpy(void *dest, const void *src, size_t n);
 
 int my_is_alpha(char c);
 int my_is_digit(char c);
@@ -16,7 +17,8 @@ int my_strncmp(const char *s1, const char *s2, size_t n);
 
 size_t my_count_words(const char *str, char sep);
 size_t my_strlen(const char *str);
-size_t my_strlcat(char *dst, const char *src, size_t size);
+size_t my_strlcat(char *dest, const char *src, size_t size);
+size_t my_strlcpy(char *dest, const char *src, size_t size);
 
 char *my_strcpy(char *dest, const char *src);
 char *my_strncpy(char *dest, const char *src, size_t n);

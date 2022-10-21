@@ -1,20 +1,48 @@
 #include "mytest.h"
 
-int main(void)
+SRunner *only_one_test(void)
 {
-    SRunner *sr = srunner_create(my_is_digit_suite());
+    return srunner_create(
+        my_strcat_suite()
+    );
+}
+
+SRunner *run_all(void)
+{
+    SRunner *sr = srunner_create(
+        my_is_digit_suite()
+    );
+
     srunner_add_suite(sr, my_is_alpha_suite());
     srunner_add_suite(sr, my_putstr_suite());
     srunner_add_suite(sr, my_strlen_suite());
+
     srunner_add_suite(sr, my_count_words_suite());
     srunner_add_suite(sr, my_split_suite());
-    srunner_add_suite(sr, my_strcat_suite());
-    srunner_add_suite(sr, my_strncat_suite());
+
     srunner_add_suite(sr, my_tolower_suite());
     srunner_add_suite(sr, my_toupper_suite());
+
     srunner_add_suite(sr, my_strcmp_suite());
     srunner_add_suite(sr, my_strncmp_suite());
+
     srunner_add_suite(sr, my_strcpy_suite());
+    srunner_add_suite(sr, my_strncpy_suite());
+    srunner_add_suite(sr, my_strlcpy_suite());
+
+    srunner_add_suite(sr, my_strcat_suite());
+    srunner_add_suite(sr, my_strncat_suite());
+    srunner_add_suite(sr, my_strlcat_suite());
+
+    srunner_add_suite(sr, my_memcpy_suite());
+
+    return sr;
+}
+
+int main(void)
+{
+    // SRunner *sr = run_all();
+    SRunner *sr = only_one_test();
 
     // run & print output with higher level of verbosity
     srunner_run_all(sr, CK_VERBOSE);

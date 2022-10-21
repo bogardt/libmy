@@ -3,13 +3,19 @@
 START_TEST(test_my_strcpy_should_success)
 {
     const char *src = "hello";
-    char *dest = (char *)malloc(sizeof(char) * strlen(src) + 1);
-    char *ret = my_strcpy(dest, src);
+    const size_t len = strlen(src);
 
-    ck_assert_str_eq(dest, ret);
-    ck_assert_str_eq(dest, src);
+    char *dest1 = (char *)malloc(sizeof(char) * len + 1);
+    char *ret1 = my_strcpy(dest1, src);
 
-    free(dest);
+    char *dest2 = (char *)malloc(sizeof(char) * len + 1);
+    char *ret2 = strcpy(dest2, src);
+
+    ck_assert_str_eq(ret1, ret2);
+    ck_assert_str_eq(dest1, dest2);
+
+    free(dest1);
+    free(dest2);
 }
 END_TEST
 
