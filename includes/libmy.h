@@ -18,6 +18,7 @@ int my_strncmp(const char *s1, const char *s2, unsigned int n);
 
 unsigned int my_count_words(const char *str, char sep);
 unsigned int my_strlen(const char *str);
+unsigned int my_strnlen(const char *str, unsigned int maxlen);
 unsigned int my_strlcat(char *dest, const char *src, unsigned int size);
 unsigned int my_strlcpy(char *dest, const char *src, unsigned int size);
 
