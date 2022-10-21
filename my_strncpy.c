@@ -21,9 +21,9 @@
  * 
 */
 
-char *my_strncpy(char *dest, const char *src, size_t n)
+char *my_strncpy(char *dest, const char *src, unsigned int n)
 {
-    size_t i;
+    unsigned int i;
 
     for (i = 0; src[i] && i < n; i++)
         dest[i] = src[i];

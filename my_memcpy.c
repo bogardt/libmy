@@ -7,14 +7,14 @@
  *
  * @param void* dest
  * @param const void* src
- * @param size_t n
+ * @param unsigned int n
  *
  * @return The memcpy() function returns a pointer to dest.
  *
 */
-void *my_memcpy(void *dest, const void *src, size_t n)
+void *my_memcpy(void *dest, const void *src, unsigned int n)
 {
-    for (size_t i = 0; i < n; i++)
+    for (unsigned int i = 0; i < n; i++)
         ((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
 
     return dest;

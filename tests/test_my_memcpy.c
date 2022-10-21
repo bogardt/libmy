@@ -25,7 +25,7 @@ START_TEST(test_my_memcpy_int_should_success)
     int *ret2 = (int *)memcpy(dest2, arr, sizeof(char) * 5);
     (void)ret1;
     (void)ret2;
-    // for (size_t i = 0; i < 4; i++)
+    // for (unsigned int i = 0; i < 4; i++)
     //     ck_assert_int_eq(ret1[i], ret2[i]);
 
     free(dest1);

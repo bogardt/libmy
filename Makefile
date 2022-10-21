@@ -95,10 +95,10 @@ re:			fclean $(NAME)
 
 test:		$(TEST_NAME)
 
-clean_test:
+clean\:test:
 			$(RM) $(OBJS_TEST)
 
-fclean\:test: clean_test
+fclean\:test: clean\:test
 			$(RM) $(TEST_NAME)
 
 test\:re:	fclean\:test $(TEST_NAME)

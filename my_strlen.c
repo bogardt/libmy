@@ -12,9 +12,9 @@
  *
  * @since 1.0
  */
-size_t my_strlen(const char *str)
+unsigned int my_strlen(const char *str)
 {
-    size_t i = 0;
+    unsigned int i = 0;
 
     while (str[i])
         i++;

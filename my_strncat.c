@@ -19,10 +19,10 @@
  *
  * @since 1.0
  */
-char *my_strncat(char *dest, const char *src, size_t n)
+char *my_strncat(char *dest, const char *src, unsigned int n)
 {
-    size_t len = my_strlen(dest);
-    size_t i;
+    unsigned int len = my_strlen(dest);
+    unsigned int i;
 
     for (i = 0; i < n && src[i]; i++)
         dest[len + i] = src[i];

@@ -3,7 +3,7 @@
 START_TEST(test_my_strncpy_should_success_level_1)
 {
     const char *src = "hello";
-    const size_t len = strlen(src);
+    const unsigned int len = strlen(src);
 
     char *dest1 = (char *)malloc(sizeof(char) * len + 1);
     char *ret1 = my_strncpy(dest1, src, len - 1);
@@ -24,7 +24,7 @@ END_TEST
 START_TEST(test_my_strncpy_should_success_level_2)
 {
     const char *src = "hello";
-    const size_t len = strlen(src) - 2;
+    const unsigned int len = strlen(src) - 2;
 
     char *dest1 = (char *)malloc(sizeof(char) * len + 1);
     char *ret1 = my_strncpy(dest1, src, len);

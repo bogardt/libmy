@@ -8,10 +8,10 @@ START_TEST(test_my_split_should_success_easily)
 
     char **tab = my_split(str, sep);
 
-    for (size_t i = 0; i < 3; i++)
+    for (unsigned int i = 0; i < 3; i++)
         ck_assert_str_eq(comp[i], tab[i]);
 
-    for (size_t i = 0; i < 3; i++)
+    for (unsigned int i = 0; i < 3; i++)
         free(tab[i]);
     free(tab);
 }
@@ -25,10 +25,10 @@ START_TEST(test_my_split_should_success_mediumly)
 
     char **tab = my_split(str, sep);
 
-    for (size_t i = 0; i < 3; i++)
+    for (unsigned int i = 0; i < 3; i++)
         ck_assert_str_eq(comp[i], tab[i]);
 
-    for (size_t i = 0; i < 3; i++)
+    for (unsigned int i = 0; i < 3; i++)
         free(tab[i]);
     free(tab);
 }
@@ -42,10 +42,10 @@ START_TEST(test_my_split_should_success_hardly)
 
     char **tab = my_split(str, sep);
 
-    for (size_t i = 0; i < 6; i++)
+    for (unsigned int i = 0; i < 6; i++)
         ck_assert_str_eq(comp[i], tab[i]);
 
-    for (size_t i = 0; i < 6; i++)
+    for (unsigned int i = 0; i < 6; i++)
         free(tab[i]);
     free(tab);
 }

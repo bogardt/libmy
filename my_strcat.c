@@ -23,8 +23,8 @@
 #include <stdio.h>
 char *my_strcat(char *dest, const char *src)
 {
-    size_t len = my_strlen(dest);
-    size_t i;
+    unsigned int len = my_strlen(dest);
+    unsigned int i;
 
     for (i = 0; src[i]; i++)
         dest[len + i] = src[i];

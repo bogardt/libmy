@@ -3,7 +3,7 @@
 START_TEST(test_my_strcpy_should_success)
 {
     const char *src = "hello";
-    const size_t len = strlen(src);
+    const unsigned int len = strlen(src);
 
     char *dest1 = (char *)malloc(sizeof(char) * len + 1);
     char *ret1 = my_strcpy(dest1, src);

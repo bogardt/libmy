@@ -26,14 +26,14 @@
  * for strlcat() it is the length of the destination (before concatenation) plus the length of the source. 
  *
 */
-size_t my_strlcat(char *dest, const char *src, size_t size)
+unsigned int my_strlcat(char *dest, const char *src, unsigned int size)
 {
    //https://c-for-dummies.com/blog/?p=3896
    // if (dest == NULL || src == NULL)
    //    return 0;
 
-   size_t src_len = my_strlen(src);
-   size_t dest_len = my_strlen(dest);
+   unsigned int src_len = my_strlen(src);
+   unsigned int dest_len = my_strlen(dest);
 
    my_strncat(dest, src, dest_len - src_len - size);
 

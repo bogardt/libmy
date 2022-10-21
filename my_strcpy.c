@@ -23,7 +23,7 @@
 
 char *my_strcpy(char *dest, const char *src)
 {
-    size_t i;
+    unsigned int i;
 
     for (i = 0; src[i]; i++)
         dest[i] = src[i];

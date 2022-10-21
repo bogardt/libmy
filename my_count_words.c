@@ -9,10 +9,10 @@
  *
  * @since 1.0
  */
-size_t my_count_words(const char *str, char sep)
+unsigned int my_count_words(const char *str, char sep)
 {
-    size_t words = 0;
-    size_t i = 0;
+    unsigned int words = 0;
+    unsigned int i = 0;
     char last_word = 0;
 
     while (str[i])
