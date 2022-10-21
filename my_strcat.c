@@ -1,7 +1,10 @@
 #include "libmy.h"
 
 /**
- * Concatenate two strings
+ * Concatenate two strings - The my_strcat() function appends the src string to
+ the dest string, overwriting the terminating null byte ('\0') at the end of
+ dest, and then adds a terminating null byte.  The strings may not overlap, and
+ the dest string must have enough space for the result.
  *
  * @param dest string If dest is not large enough, program behavior is
  unpredictable; buffer overruns are a favorite avenue for attacking secure
@@ -13,15 +16,10 @@
  * @return The my_strcat() and strncat() functions return a pointer to the
        resulting string dest.
  *
- * @note The my_strcat() function appends the src string to the dest string,
-       overwriting the terminating null byte ('\0') at the end of dest,
-       and then adds a terminating null byte.  The strings may not
-       overlap, and the dest string must have enough space for the
-       result.
  *
  * @since 1.0
  */
-#include <stdio.h>
+
 char *my_strcat(char *dest, const char *src) {
     unsigned int len = my_strlen(dest);
     unsigned int i;

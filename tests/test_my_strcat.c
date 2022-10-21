@@ -1,134 +1,116 @@
 #include "mytest.h"
-#include <string.h>
 
-START_TEST(test_my_strcat_should_success_level_8) {
+START_TEST(test_my_strcat_should_success_level_1) {
     const char *src = "toto";
 
-    char dest1[8] = "tata";
-    char *res1 = my_strcat(dest1, src);
+    char dest[9] = "tata";
+    char *res = my_strcat(dest, src);
 
-    char dest2[8] = "tata";
-    char *res2 = strcat(dest2, src);    
+    (void)res;
 
-    ck_assert_str_eq(my_strcat(dest1, "tototata"), strcat(dest2, "tototata"));
-    ck_assert_str_eq(res1, res2);    
+    ck_assert_str_eq(dest, "tatatoto");
 }
 END_TEST
 
-// START_TEST(test_my_strcat_should_success_level_1) {
-//     const char *src = "toto";
+START_TEST(test_my_strcat_should_success_level_2) {
+    const char *src = "toto123";
 
-//     char dest[8] = "tata";
-//     char *res = my_strcat(dest, src);
+    char dest[12] = "tata";
+    char *res = my_strcat(dest, src);
+    (void)res;
 
-//     ck_assert_str_eq(res, "tatatoto");
-// }
-// END_TEST
+    ck_assert_str_eq(dest, "tatatoto123");
+}
+END_TEST
 
-// START_TEST(test_my_strcat_should_success_level_2) {
-//     const char *src = "toto123";
+START_TEST(test_my_strcat_should_success_level_3) {
+    const char *src = " encore un weekend";
 
-//     char dest[11] = "tata";
-//     char *res = my_strcat(dest, src);
+    char dest[28] = "toto teuf";
+    char *res = my_strcat(dest, src);
+    (void)res;
 
-//     ck_assert_str_eq(res, "tatatoto123");
-// }
-// END_TEST
+    ck_assert_str_eq(dest, "toto teuf encore un weekend");
+}
+END_TEST
 
-// START_TEST(test_my_strcat_should_success_level_3) {
-//     const char *src = " encore un weekend";
+START_TEST(test_my_strcat_should_success_level_4) {
+    const char *str = "tata";
+    const char *src = "toto";
 
-//     char dest[27] = "toto teuf";
-//     char *res = my_strcat(dest, src);
+    char *dest1 = malloc(sizeof(char) * (my_strlen(src) + my_strlen(str)) + 1);
+    char *dest2 = malloc(sizeof(char) * (my_strlen(src) + my_strlen(str)) + 1);
 
-//     ck_assert_str_eq(res, "toto teuf encore un weekend");
-// }
-// END_TEST
+    strcpy(dest1, str);
+    strcpy(dest2, str);
 
-// START_TEST(test_my_strcat_should_success_level_4) {
-//     const char *src = "toto";
+    my_strcat(dest1, src);
+    strcat(dest2, src);
 
-//     char dest[8] = "tata";
-//     int length = strlen(dest) + strlen(src);
-//     char *cpy = (char *) malloc(sizeof(char) * length + 1);
+    ck_assert_str_eq(dest1, "tatatoto");
+    ck_assert_str_eq(dest2, "tatatoto");
+    ck_assert_str_eq(dest1, dest2);
 
-//     my_strcpy(cpy, dest);
+    free(dest1);
+    free(dest2);
+}
+END_TEST
 
-//     char *res = my_strcat(cpy, src);
+START_TEST(test_my_strcat_should_success_level_5) {
+    const char *str = "tata";
+    const char *src = "toto123";
 
-//     ck_assert_str_eq(res, "tatatoto");
+    char *dest1 = malloc(sizeof(char) * (my_strlen(src) + my_strlen(str)) + 1);
+    char *dest2 = malloc(sizeof(char) * (my_strlen(src) + my_strlen(str)) + 1);
 
-//     free(res);
-// }
-// END_TEST
+    strcpy(dest1, str);
+    strcpy(dest2, str);
 
-// START_TEST(test_my_strcat_should_success_level_5) {
-//     const char *src = "toto";
+    my_strcat(dest1, src);
+    strcat(dest2, src);
 
-//     char *dest1 = strdup("tata");
-//     char *dest2 = strdup("tata");
+    ck_assert_str_eq(dest1, "tatatoto123");
+    ck_assert_str_eq(dest2, "tatatoto123");
+    ck_assert_str_eq(dest1, dest2);
 
-//     char *res1 = my_strcat(dest1, src);
+    free(dest1);
+    free(dest2);
+}
+END_TEST
 
-//     char *res2 = strcat(dest2, src);
+START_TEST(test_my_strcat_should_success_level_6) {
+    const char *str = "toto teuf";
+    const char *src = " encore un weekend";
 
-//     ck_assert_str_eq(res1, "tatatoto");
-//     ck_assert_str_eq(res2, "tatatoto");
-//     ck_assert_str_eq(res1, res2);
+    char *dest1 = malloc(sizeof(char) * (my_strlen(src) + my_strlen(str)) + 1);
+    char *dest2 = malloc(sizeof(char) * (my_strlen(src) + my_strlen(str)) + 1);
 
-//     free(dest1);
-//     free(dest2);
-// }
-// END_TEST
+    strcpy(dest1, str);
+    strcpy(dest2, str);
 
-// START_TEST(test_my_strcat_should_success_level_6) {
-//     const char *src = "toto123";
+    my_strcat(dest1, src);
+    strcat(dest2, src);
 
-//     char *dest1 = strdup("tata");
-//     char *dest2 = strdup("tata");
+    ck_assert_str_eq(dest1, "toto teuf encore un weekend");
+    ck_assert_str_eq(dest2, "toto teuf encore un weekend");
+    ck_assert_str_eq(dest1, dest2);
 
-//     char *res1 = my_strcat(dest1, src);
-//     char *res2 = strcat(dest2, src);
-
-//     ck_assert_str_eq(res1, "tatatoto123");
-//     ck_assert_str_eq(res2, "tatatoto123");
-//     ck_assert_str_eq(res1, res2);
-
-//     free(dest1);
-//     free(dest2);
-// }
-// END_TEST
-
-// START_TEST(test_my_strcat_should_success_level_7) {
-//     const char *src = " encore un weekend";
-
-//     char *dest1 = strndup("toto teuf", 27);
-//     char *dest2 = strndup("toto teuf", 27);
-
-//     char *res1 = my_strcat(dest1, src);
-//     char *res2 = strcat(dest2, src);
-
-//     ck_assert_str_eq(res1, "toto teuf encore un weekend");
-//     ck_assert_str_eq(res2, "toto teuf encore un weekend");
-//     ck_assert_str_eq(res1, res2);
-
-//     free(dest1);
-//     free(dest2);
-// }
-// END_TEST
+    free(dest1);
+    free(dest2);
+}
+END_TEST
 
 Suite *my_strcat_suite(void) {
     Suite *s = suite_create("my_strcat");
 
     /* Core test case */
     TCase *tc_core = tcase_create("Core");
-    tcase_add_test(tc_core, test_my_strcat_should_success_level_8);
-    // tcase_add_test(tc_core, test_my_strcat_should_success_level_2);
-    // tcase_add_test(tc_core, test_my_strcat_should_success_level_3);
-    // tcase_add_test(tc_core, test_my_strcat_should_success_level_4);
-    // tcase_add_test(tc_core, test_my_strcat_should_success_level_5);
-    // tcase_add_test(tc_core, test_my_strcat_should_success_level_6);
-    // tcase_add_test(tc_core, test_my_strcat_should_success_level_7);
+    tcase_add_test(tc_core, test_my_strcat_should_success_level_1);
+    tcase_add_test(tc_core, test_my_strcat_should_success_level_2);
+    tcase_add_test(tc_core, test_my_strcat_should_success_level_3);
+    tcase_add_test(tc_core, test_my_strcat_should_success_level_4);
+    tcase_add_test(tc_core, test_my_strcat_should_success_level_5);
+    tcase_add_test(tc_core, test_my_strcat_should_success_level_6);
     suite_add_tcase(s, tc_core);
 
     return s;
