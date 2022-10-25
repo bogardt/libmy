@@ -8,6 +8,7 @@ SRunner *run_all(void) {
     srunner_add_suite(sr, my_is_alpha_suite());
     srunner_add_suite(sr, my_putstr_suite());
     srunner_add_suite(sr, my_strlen_suite());
+    srunner_add_suite(sr, my_strnlen_suite());
 
     srunner_add_suite(sr, my_count_words_suite());
     srunner_add_suite(sr, my_split_suite());
@@ -28,6 +29,7 @@ SRunner *run_all(void) {
 
     srunner_add_suite(sr, my_memcpy_suite());
     srunner_add_suite(sr, my_memset_suite());
+    srunner_add_suite(sr, my_bzero_suite());
 
     srunner_add_suite(sr, my_strchr_suite());
 
