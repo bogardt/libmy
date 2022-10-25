@@ -23,5 +23,6 @@ Suite *my_strncpy_suite(void);
 Suite *my_strlcpy_suite(void);
 Suite *my_memcpy_suite(void);
 Suite *my_memset_suite(void);
+Suite *my_strchr_suite(void);
 
 #endif /* !__MY_TEST_H__ */

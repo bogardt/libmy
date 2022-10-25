@@ -21,6 +21,7 @@ SRC			+= $(REP)/my_strncat.c
 SRC			+= $(REP)/my_strlcat.c
 SRC			+= $(REP)/my_memcpy.c
 SRC			+= $(REP)/my_memset.c
+SRC			+= $(REP)/my_strchr.c
 
 # sources des tests unitaires
 SRC_TEST	+= $(TEST_REP)/main.c
@@ -43,6 +44,7 @@ SRC_TEST	+= $(TEST_REP)/test_my_strlcat.c
 SRC_TEST	+= $(TEST_REP)/test_my_strlcpy.c
 SRC_TEST	+= $(TEST_REP)/test_my_memcpy.c
 SRC_TEST	+= $(TEST_REP)/test_my_memset.c
+SRC_TEST	+= $(TEST_REP)/test_my_strchr.c
 
 RM			= rm -f
 
