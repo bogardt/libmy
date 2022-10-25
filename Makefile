@@ -41,7 +41,8 @@ FILE_SRC	= \
 	my_memcpy \
 	my_memset \
 	my_bzero \
-	my_strnlen
+	my_strnlen \
+	my_strchr
 
 SRC = $(addprefix $(REP)/,$(addsuffix .c,$(FILE_SRC)))
 SRC_COV = \
@@ -73,7 +74,8 @@ FILE_TEST = \
   test_my_memcpy \
   test_my_memset \
 	test_my_strnlen \
-	test_my_bzero
+	test_my_bzero \
+	test_my_strchr
 
 SRC_TEST = $(addprefix $(TEST_REP)/,$(addsuffix .c,$(FILE_TEST)))
 
